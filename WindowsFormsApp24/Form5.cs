@@ -37,7 +37,10 @@ namespace WindowsFormsApp24
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            средний_баллTextBox.Text = Convert.ToString((Convert.ToSingle(оценка_1TextBox.Text) + Convert.ToSingle(оценка_2TextBox.Text)) / 2);
+            Validate();
+            оценкиBindingSource.EndEdit();
+            tableAdapterManager.UpdateAll(database1DataSet);
         }
     }
 }
